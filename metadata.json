@@ -1,0 +1,6 @@
+{
+  "name": "MoneyMuse",
+  "description": "Premium AI-Powered Personal Expense Tracker & Financial Analytics Platform featuring cash flow analytics, budget intelligence, savings goals, and an AI money coach.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,717 @@
+# MASTER BUILD PROMPT — MONEY MUSE
+## Premium AI-Powered Personal Expense Tracker & Financial Analytics Platform
+
+Act as a world-class product designer, senior frontend engineer, full-stack architect, data visualization specialist, and fintech UX expert.
+
+Build a complete, polished, production-minded personal finance web application called **MoneyMuse**. This is not a basic expense tracker or a generic admin dashboard. It should feel like a premium fintech startup product with exceptional graphics, advanced visualizations, intuitive interactions, thoughtful animations, and genuinely useful financial insights.
+
+The result must be a WORKING APPLICATION, not a static mockup, wireframe, or collection of decorative cards.
+
+Prioritize these qualities in order:
+1. Exceptional visual design.
+2. Meaningful and interactive data visualizations.
+3. A seamless, beginner-friendly user experience.
+4. Fully working expense and income management.
+5. Useful financial analytics and AI-powered insights.
+6. Reliable data persistence, responsive layouts, and maintainable code.
+
+Do not stop after building the dashboard. Implement the complete core application, connect the interactions, test the important flows, and fix errors.
+
+---
+
+# 1. PRODUCT VISION
+
+MoneyMuse helps a person understand where their money goes, control spending, build savings, and make better everyday financial decisions.
+
+The application should answer these questions immediately:
+- How much money do I currently have?
+- How much did I earn and spend this month?
+- What percentage of my income am I saving?
+- Where is most of my money going?
+- Am I overspending in any category?
+- How do my spending habits compare with previous months?
+- How much can I safely spend for the rest of this month?
+- Am I on track to reach my savings goals?
+- What practical action can I take to improve my finances?
+
+Design the experience around clarity and confidence, not financial anxiety.
+
+Default currency: INR (₹). Use Indian number formatting where appropriate, such as ₹1,25,000. Allow the user to change their currency in settings.
+
+Use realistic Indian transaction examples in demo mode, including groceries, food delivery, transport, shopping, subscriptions, education, rent, utilities, salary, freelance income, and savings.
+
+# 2. VISUAL DESIGN SYSTEM — EXTREMELY IMPORTANT
+
+Create a distinctive, premium visual identity. Avoid generic dashboard templates.
+
+## Overall aesthetic
+
+Use a sophisticated combination of:
+- Midnight navy and deep indigo surfaces.
+- Electric violet and soft lavender accents.
+- Cyan and mint for positive financial metrics.
+- Warm coral or amber for spending alerts.
+- Subtle gradients, restrained glow effects, and layered surfaces.
+- Generous whitespace and strong visual hierarchy.
+- Beautiful typography, polished icons, and carefully aligned layouts.
+- Soft ambient background lighting, with decorative effects used sparingly.
+
+Suggested palette:
+- Background: #0B1020
+- Main surface: #11182B
+- Elevated surface: #172139
+- Primary accent: #8B5CF6
+- Secondary accent: #A78BFA
+- Cyan: #67E8F9
+- Positive: #34D399
+- Warning: #FBBF24
+- Negative: #FB7185
+- Primary text: #F8FAFC
+- Secondary text: #94A3B8
+
+Use these as a starting point, not rigid limitations.
+
+Support both a beautiful dark theme and a carefully designed light theme. Dark mode should be the initial default.
+
+## Visual quality requirements
+
+- Use a consistent 8-point spacing system.
+- Use a cohesive font system, preferably Inter or a similarly refined sans-serif.
+- Use Lucide icons or another consistent icon library.
+- Use subtle borders, layered shadows, and controlled blur.
+- Give important financial figures strong typographic emphasis.
+- Use consistent card radii and padding.
+- Design custom empty states, loading skeletons, tooltips, success feedback, and error states.
+- Use smooth, purposeful animations with reduced-motion accessibility support.
+- Include tasteful micro-interactions for buttons, navigation, chart selection, dropdowns, and modals.
+- Avoid excessive glassmorphism, excessive gradients, visual clutter, emoji-heavy interfaces, and unnecessary decorative elements.
+- Never use fake charts that do not represent actual application data.
+- Do not use oversized headings that waste space.
+- Do not make every card look identical.
+
+The dashboard must look like a carefully art-directed product, not an AI-generated template.
+
+# 3. APPLICATION LAYOUT AND NAVIGATION
+
+Build a responsive application shell.
+
+Desktop:
+- Elegant left sidebar, approximately 240–260px wide.
+- Main content area with generous spacing.
+- Compact top navigation containing the current page title, date context, search, theme switcher, and profile/settings menu.
+- A floating or clearly visible primary action for adding a transaction.
+- Responsive grid layouts with strong alignment.
+
+Sidebar navigation:
+1. Overview
+2. Transactions
+3. Analytics
+4. Budgets
+5. Savings Goals
+6. AI Money Coach
+7. Settings
+
+Include a compact brand mark and MoneyMuse wordmark.
+
+Show selected navigation states, hover feedback, and active-page indicators. Navigation must work; every item must open its corresponding page.
+
+Mobile:
+- Use a compact top bar and bottom navigation or a thoughtfully designed collapsible menu.
+- Keep the add-transaction action easily accessible.
+- Stack dashboard sections intelligently.
+- Convert wide tables into responsive transaction cards or compact lists.
+- Ensure charts remain readable and interactive on touchscreens.
+- Never allow horizontal overflow.
+
+# 4. OVERVIEW DASHBOARD
+
+This is the most important page. Make it visually spectacular while keeping the information easy to understand.
+
+## A. Personalized greeting and period selector
+
+Display a contextual greeting, current month, and concise subtitle.
+
+Include a functional date filter with:
+- This week
+- This month
+- Last month
+- Last 3 months
+- This year
+- Custom date range
+
+All relevant dashboard metrics and charts must respond to the selected date range.
+
+## B. Financial overview cards
+
+Build four distinct, polished summary cards:
+
+1. Total Balance
+2. Income
+3. Expenses
+4. Savings Rate
+
+Each card should display:
+- A prominent amount or percentage.
+- A small icon.
+- A comparison with the previous equivalent period.
+- A small sparkline or compact visual indicator where useful.
+- A meaningful positive, negative, or neutral indicator.
+
+Calculate these metrics from the transaction data. Define the balance clearly and avoid counting transfers between the user's own accounts as income or expenses.
+
+Provide informative tooltips for unfamiliar metrics.
+
+## C. Hero visualization: Cash Flow
+
+Create a large, beautiful interactive area chart showing income versus expenses over time.
+
+Requirements:
+- Smooth curves and restrained gradients.
+- Separate income and expense series.
+- Date-aware axes and readable currency formatting.
+- Interactive hover tooltips with exact values.
+- A legend that allows series to be toggled.
+- Useful date intervals.
+- Responsive resizing.
+- Animated entrance when appropriate.
+- A subtle grid that does not overpower the data.
+
+Use a reliable chart library such as Recharts if the project supports React.
+
+This visualization must use real transaction-derived data rather than hardcoded decorative values.
+
+## D. Spending breakdown
+
+Create an interactive donut chart showing expense categories.
+
+Possible categories:
+- Housing
+- Food & Dining
+- Groceries
+- Transportation
+- Shopping
+- Education
+- Health
+- Entertainment
+- Bills & Utilities
+- Subscriptions
+- Travel
+- Other
+
+Show the total expenses in the center.
+
+Each segment must have a consistent category color. Hovering or selecting a segment should show its amount, percentage, and transaction count.
+
+Clicking a segment should filter or navigate to matching transactions.
+
+Place a clear category legend alongside the chart on larger screens and below it on smaller screens.
+
+Include a useful empty state when no expense data exists.
+
+## E. Spending trend
+
+Build a monthly comparison visualization that makes it easy to compare:
+- Income
+- Expenses
+- Savings
+
+Include month labels, useful tooltips, and the ability to inspect individual months.
+
+## F. Recent transactions
+
+Show a beautifully formatted list of the latest transactions, including:
+- Merchant or transaction title.
+- Category icon and category name.
+- Date.
+- Payment method or account when available.
+- Transaction type.
+- Amount with clear income/expense styling.
+
+Include search, a View All action, and a quick edit/delete menu.
+
+Clicking a transaction must open its detail view or edit dialog.
+
+## G. Budget progress overview
+
+Display active budgets as compact progress cards with:
+- Category.
+- Amount spent.
+- Budget limit.
+- Percentage used.
+- Remaining amount.
+- Clear status indicators.
+
+Use calm progress colors and sensible warnings when the budget is close to or over its limit.
+
+## H. Financial insights panel
+
+Display useful, data-derived observations, such as:
+- “Food spending is 18% lower than last month.”
+- “You have used 76% of your shopping budget.”
+- “You saved ₹4,500 more than in the previous month.”
+- “At your current pace, you may exceed your transport budget.”
+
+Only show claims supported by actual transactions and budget data. Do not invent trends, percentages, or savings.
+
+Include links to the relevant analytics or category views.
+
+## I. Quick actions
+
+Provide clear, accessible shortcuts for:
+- Add Expense
+- Add Income
+- Create Budget
+- Add Savings Goal
+- Import Transactions
+
+Use compact, attractive controls rather than a large grid of unnecessary buttons.
+
+# 5. TRANSACTION MANAGEMENT
+
+Create a fully functional Transactions page.
+
+## Add and edit transaction form
+
+Support these fields:
+- Transaction type: Expense or Income.
+- Amount.
+- Title or merchant.
+- Category.
+- Transaction date.
+- Account or payment method.
+- Optional notes.
+- Optional tags.
+
+Requirements:
+- Validate all required fields.
+- Reject invalid or negative amounts where inappropriate.
+- Prevent accidental duplicate submissions.
+- Use accessible inputs and helpful validation messages.
+- Allow editing existing transactions.
+- Allow deletion with confirmation and an undo option where practical.
+- Update all relevant dashboard metrics and visualizations immediately after changes.
+- Provide clear success and error feedback.
+
+Use a polished modal or side panel on desktop and a mobile-friendly full-screen sheet on small devices.
+
+## Transaction history
+
+Implement:
+- Search by title or merchant.
+- Filter by date, type, category, and account.
+- Sort by date and amount.
+- Pagination or a performant alternative.
+- Reset filters.
+- Clear active-filter indicators.
+- Transaction details.
+- Edit and delete actions.
+- A useful no-results state.
+
+Allow export of filtered transactions to CSV.
+
+## Recurring transactions
+
+Support recurring transaction definitions with:
+- Frequency: weekly, monthly, or yearly.
+- Next scheduled date.
+- Amount and category.
+- Enabled/disabled state.
+
+If automatic background scheduling is not configured, present recurring transactions as schedules and reminders rather than claiming that future transactions are automatically processed.
+
+# 6. ANALYTICS PAGE
+
+Build a dedicated, data-rich analytics experience.
+
+Include:
+
+1. Spending by category.
+2. Income versus expenses over time.
+3. Monthly savings trend.
+4. Daily or weekly spending patterns.
+5. Top merchants and largest transactions.
+6. Category comparison against the previous period.
+7. Fixed versus variable expenses, when sufficient classification data exists.
+8. Essential versus discretionary spending, when categories or user labels support it.
+9. Spending calendar or heatmap.
+10. Net cash flow trend.
+
+Add date-range and category filters.
+
+Every chart must have:
+- A clear title and explanatory subtitle.
+- Properly formatted axes and tooltips.
+- Accessible legends.
+- Useful empty states.
+- Responsive behavior.
+- Meaningful click interactions.
+
+Provide concise explanations of what the data indicates without making unsupported assumptions.
+
+# 7. BUDGET MANAGEMENT
+
+Create a dedicated Budgets page.
+
+Allow users to:
+- Create a category budget.
+- Edit its amount and period.
+- Set monthly or weekly limits.
+- View total allocated budgets.
+- View current spending and remaining amounts.
+- Track budget usage visually.
+- See warning states at configurable thresholds.
+- Pause or delete a budget.
+- Review historical budget performance where historical data exists.
+
+Prevent misleading calculations when the selected period has incomplete data.
+
+Make the budget page visually engaging with progress rings, category illustrations or icons, and a useful overall spending summary.
+
+Do not treat transfers between the user's own accounts as expenses.
+
+# 8. SAVINGS GOALS
+
+Create a Savings Goals page.
+
+Each goal should include:
+- Name.
+- Target amount.
+- Current saved amount.
+- Target date.
+- Optional image or icon.
+- Contribution history.
+- Remaining amount.
+- Progress percentage.
+- Estimated completion date when sufficient information exists.
+
+Allow users to:
+- Create and edit goals.
+- Record contributions and withdrawals.
+- View goal progress.
+- See a contribution history.
+- Delete a goal with confirmation.
+
+Clearly distinguish a recorded savings goal from actual money held in a bank account. Never double-count contributions as expenses or income.
+
+Create an attractive goal overview with progress rings, milestone animations, and a satisfying completion state.
+
+# 9. AI MONEY COACH — GEMINI INTEGRATION
+
+Integrate Gemini using the supported Google AI SDK and a secure server-side or platform-supported secret configuration.
+
+Never expose a private Gemini API key in frontend code or commit it to source control.
+
+Create a dedicated conversational AI Money Coach page with:
+- A polished chat interface.
+- Suggested starter questions.
+- Conversation history where supported.
+- Streaming responses if supported by the chosen SDK.
+- Clear loading and error states.
+- A context panel summarizing relevant financial metrics.
+- Links to relevant app sections where practical.
+
+Suggested prompts:
+- “Where did most of my money go this month?”
+- “How can I reduce my spending next month?”
+- “Compare my spending with last month.”
+- “Am I on track to reach my savings goal?”
+- “Help me create a realistic budget.”
+- “What recurring expenses should I review?”
+
+## AI behavior
+
+Provide the coach with a structured, privacy-conscious summary of relevant transaction and budget data, rather than blindly sending all stored personal information.
+
+The model must:
+- Analyze only the data provided to it.
+- Distinguish observed facts from estimates and suggestions.
+- Include relevant figures and periods in its explanations.
+- Never invent transactions or claim to have changed records without actually doing so.
+- Never make unsupported financial predictions.
+- Explain uncertainty when data is incomplete.
+- Offer practical, nonjudgmental suggestions.
+- Avoid presenting itself as a licensed financial adviser.
+- Never request bank passwords, card PINs, or authentication secrets.
+
+When a response references a metric, calculate that metric deterministically from application data wherever possible and pass the result to Gemini for explanation.
+
+For transaction creation, deletion, or budget changes, use explicit user confirmation and actual application functions. Do not let a chat response pretend that an action succeeded.
+
+If Gemini is unavailable or not configured, show a useful setup message and keep the rest of the expense tracker fully functional. Provide rule-based insights as a fallback.
+
+# 10. IMPORT AND EXPORT
+
+Build a working import/export experience.
+
+CSV import:
+- Provide a downloadable sample CSV template.
+- Allow file selection and preview.
+- Map common column names to transaction fields.
+- Validate dates, amounts, categories, and required values.
+- Display row-level validation errors.
+- Let the user confirm before importing.
+- Provide duplicate detection or a duplicate review step.
+- Show a summary of successful and rejected rows.
+
+CSV export:
+- Export transactions with useful column names.
+- Respect active filters when exporting filtered data.
+- Format dates consistently.
+- Handle commas, quotation marks, and special characters correctly.
+
+Do not claim that a bank has been connected or that transactions have been synced unless a real integration exists.
+
+# 11. ONBOARDING AND PERSONALIZATION
+
+Build a welcoming first-use experience.
+
+Let users configure:
+- Display name.
+- Currency.
+- Monthly income estimate, if desired.
+- Month-start preference where appropriate.
+- Initial budget preferences.
+- Savings goals.
+- Theme preference.
+
+Provide a clear choice between:
+1. Exploring a demo workspace with sample transactions.
+2. Starting with an empty personal workspace.
+
+Make demo mode visually identifiable and allow users to reset demo data.
+
+Do not silently mix sample transactions into real personal data.
+
+Include a helpful empty dashboard for new users, with clear calls to action that explain how to add the first transaction.
+
+# 12. SETTINGS
+
+Include:
+- Profile preferences.
+- Currency selection.
+- Theme selection.
+- Date and number formatting.
+- Default dashboard period.
+- Category management.
+- Account and payment-method management.
+- Data export.
+- Demo-data reset.
+- Data deletion with confirmation.
+- Privacy information.
+- AI configuration status.
+
+Settings must work rather than merely display controls.
+
+# 13. DATA ARCHITECTURE AND PERSISTENCE
+
+Choose the architecture that fits the generated project and implement it consistently.
+
+For a React application, use TypeScript where practical, reusable components, and a clean separation between UI, business logic, and data access.
+
+Recommended building blocks:
+- React.
+- TypeScript.
+- Tailwind CSS or the existing supported styling system.
+- Recharts for visualizations.
+- Lucide icons.
+- A reliable date utility.
+- Google Gemini SDK for the AI feature.
+
+Use the libraries already supported by the environment when possible. Do not introduce unnecessary dependencies.
+
+Define clear data models for:
+- Transactions.
+- Categories.
+- Accounts.
+- Budgets.
+- Savings goals.
+- Recurring transaction schedules.
+- User preferences.
+
+Use integer minor currency units or an appropriate decimal-safe money representation for calculations. Avoid floating-point errors in financial totals.
+
+## Persistence
+
+Use the best available persistence option supported by the generated environment.
+
+- If a backend/database is available, implement proper persistence and access control.
+- If Firebase is suitable and supported, use its authentication and database services with appropriate security rules.
+- If no backend is configured, use localStorage or IndexedDB for a functional local-first prototype.
+- Keep the data-access layer modular so persistence can be upgraded later.
+
+Do not claim that browser-local data is synced across devices or backed up in the cloud.
+
+Ensure data survives page refreshes in the chosen persistence mode.
+
+If accounts or authentication are implemented, isolate each user's data and enforce authorization server-side. Never rely solely on frontend checks for data security.
+
+## Financial calculation rules
+
+Implement deterministic utility functions for:
+- Total income.
+- Total expenses.
+- Net cash flow.
+- Current balance, using a clearly defined opening balance and recorded transactions.
+- Savings rate.
+- Category totals.
+- Budget utilization.
+- Goal progress.
+- Period-over-period comparisons.
+
+Use consistent date boundaries, currency formatting, and transaction-type rules.
+
+Handle empty datasets, zero income, refunds, transfers, and incomplete date ranges correctly. Make the treatment of refunds and transfers explicit.
+
+# 14. DEMO DATA AND REALISTIC CONTENT
+
+Seed demo mode with approximately 40–60 realistic transactions distributed over several months.
+
+Include:
+- Salary.
+- Freelance income.
+- Rent.
+- Groceries.
+- Food delivery.
+- Transport.
+- Shopping.
+- Education.
+- Entertainment.
+- Utilities.
+- Subscriptions.
+- Medical expenses.
+- Savings contributions where appropriate.
+
+Use varied transaction amounts, dates, merchants, and categories.
+
+Include some months with different spending patterns so comparisons are meaningful.
+
+Use a deterministic seed dataset so the demo is consistent between reloads.
+
+Every chart, summary card, budget indicator, and insight must derive from the same underlying demo dataset.
+
+Never make up a changing random dataset each time the page loads.
+
+# 15. INTERACTIONS AND MICRO-INTERACTIONS
+
+Make the application feel alive and responsive.
+
+Implement:
+- Smooth page transitions where appropriate.
+- Chart hover and selection interactions.
+- Animated chart entrances.
+- Interactive summary cards.
+- Responsive dropdowns.
+- Accessible modal dialogs.
+- Toast notifications.
+- Skeleton loading states.
+- Confirmation dialogs.
+- Empty-state illustrations or tasteful CSS-based visuals.
+- Search and filter interactions.
+- Functional navigation.
+- Form validation.
+- Keyboard navigation.
+- Focus indicators.
+- Reduced-motion support.
+
+Use animation sparingly and intentionally. Prioritize performance and usability over effects.
+
+# 16. ACCESSIBILITY AND RESPONSIVE DESIGN
+
+Meet practical accessibility standards:
+- Semantic HTML.
+- Keyboard-accessible controls.
+- Sufficient color contrast.
+- Visible focus indicators.
+- Accessible form labels.
+- Helpful validation messages.
+- Screen-reader labels for icon-only buttons.
+- Text alternatives or summaries for important chart information.
+- No dependence on color alone to convey financial status.
+- Reduced-motion support.
+
+Test at mobile, tablet, laptop, and large desktop widths.
+
+# 17. IMPLEMENTATION QUALITY
+
+Use reusable components and consistent naming.
+
+Suggested components:
+- AppShell
+- Sidebar
+- MobileNavigation
+- TopBar
+- SummaryCard
+- CashFlowChart
+- SpendingDonutChart
+- MonthlyComparisonChart
+- TransactionList
+- TransactionForm
+- FilterBar
+- BudgetProgressCard
+- SavingsGoalCard
+- InsightCard
+- MoneyCoachChat
+- ConfirmDialog
+- ToastProvider
+- EmptyState
+- LoadingSkeleton
+
+Keep calculations in testable utility functions rather than embedding business logic in presentation components.
+
+Avoid:
+- Dead navigation links.
+- Placeholder buttons.
+- Nonfunctional forms.
+- Fake success messages.
+- Hardcoded analytics disconnected from transactions.
+- Duplicated financial calculation logic.
+- Broken responsive layouts.
+- Unnecessary full-page reloads.
+- Exposed API keys.
+- Unhandled runtime errors.
+- Overengineering the initial version.
+
+# 18. ACCEPTANCE TESTS
+
+Before considering the application complete, verify the following:
+
+1. A user can add an expense.
+2. The expense appears in the transaction list.
+3. Dashboard totals and charts update immediately.
+4. A user can edit and delete a transaction.
+5. Data persists after refreshing the page.
+6. Search, sorting, and filters work.
+7. Date-range changes update relevant analytics.
+8. Budget progress updates when transactions change.
+9. Savings-goal contributions update goal progress without double-counting income or expenses.
+10. CSV import validates data before committing it.
+11. CSV export produces a valid file.
+12. Theme selection works.
+13. Navigation works on desktop and mobile.
+14. The AI coach handles configured and unconfigured states gracefully.
+15. No API secrets are exposed in client-side bundles.
+16. Empty states and invalid inputs are handled correctly.
+17. Financial calculations handle zero values and edge cases.
+18. There are no obvious console errors or broken interactions.
+
+# 19. FINAL EXECUTION INSTRUCTIONS
+
+Start by examining the available project environment and choosing a compatible implementation.
+
+Then build the complete application with all core pages, a cohesive design system, realistic demo data, reusable components, functional financial calculations, persistent storage, and interactive charts.
+
+Implement the most important user flows end to end before polishing secondary features.
+
+Do not respond with a plan or a tutorial instead of the application. Write the code and build the working product.
+
+If a backend service, Gemini API key, authentication provider, or other external integration requires configuration, implement the integration boundary and explain precisely what remains to be configured. Keep the core application usable without optional integrations.
+
+After implementation:
+- Run the available checks.
+- Fix compilation and runtime issues.
+- Verify transaction-to-dashboard updates.
+- Verify persistence and responsive layouts.
+- Check that all visible controls perform their advertised actions.
+- Summarize the implemented features and any required setup steps.
+
+**Final quality bar:** MoneyMuse should feel like a polished, premium fintech product that someone would genuinely enjoy using every day. Prioritize exceptional visual craft, trustworthy financial calculations, interactive data visualization, and a frictionless experience over simply adding more features.
